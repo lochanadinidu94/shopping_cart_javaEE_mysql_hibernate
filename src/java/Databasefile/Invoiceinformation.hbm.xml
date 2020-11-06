@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Invoiceinformation" table="invoiceinformation" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idinvoiceInformationcol" type="java.lang.Integer">
+            <column name="IDInvoiceInformationcol" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="color" class="Databasefile.Color" fetch="select">
+            <column name="Color_idColor" not-null="true" />
+        </many-to-one>
+        <many-to-one name="invoice" class="Databasefile.Invoice" fetch="select">
+            <column name="Invoice_idInvoice" not-null="true" />
+        </many-to-one>
+        <many-to-one name="product" class="Databasefile.Product" fetch="select">
+            <column name="Product_idProduct" not-null="true" />
+        </many-to-one>
+        <set name="rattings" table="ratting" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="InvoiceInformation_IDInvoiceInformationcol" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Ratting" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.User" table="user" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idUser" type="java.lang.Integer">
+            <column name="idUser" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="gender" class="Databasefile.Gender" fetch="select">
+            <column name="Gender_idGender" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userStatus" class="Databasefile.UserStatus" fetch="select">
+            <column name="User_Status_idUser_Status" not-null="true" />
+        </many-to-one>
+        <property name="fistName" type="string">
+            <column name="FistName" length="45" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="45" />
+        </property>
+        <property name="nic" type="string">
+            <column name="NIC" length="45" />
+        </property>
+        <property name="address1" type="string">
+            <column name="Address1" length="45" />
+        </property>
+        <property name="address2" type="string">
+            <column name="Address2" length="45" />
+        </property>
+        <property name="city" type="string">
+            <column name="City" length="45" />
+        </property>
+        <property name="district" type="string">
+            <column name="District" length="45" />
+        </property>
+        <property name="mobileNo" type="string">
+            <column name="MobileNo" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="45" />
+        </property>
+        <property name="userType" type="string">
+            <column name="UserType" length="45" />
+        </property>
+        <set name="userroles" table="userrole" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Userrole" />
+        </set>
+        <set name="addregs" table="addreg" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Addreg" />
+        </set>
+        <set name="invoices" table="invoice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Invoice" />
+        </set>
+        <set name="logins" table="login" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Login" />
+        </set>
+        <set name="wishLists" table="wish_list" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.WishList" />
+        </set>
+        <set name="loginreports" table="loginreport" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Loginreport" />
+        </set>
+        <set name="msgs" table="msg" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Msg" />
+        </set>
+        <set name="donateamounts" table="donateamount" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Donateamount" />
+        </set>
+        <set name="userfeedbacks" table="userfeedback" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_idUser" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Userfeedback" />
+        </set>
+    </class>
+</hibernate-mapping>

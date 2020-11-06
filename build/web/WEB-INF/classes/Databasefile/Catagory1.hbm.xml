@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Catagory1" table="catagory1" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idCatagory1" type="java.lang.Integer">
+            <column name="idCatagory1" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="Name" length="45" />
+        </property>
+        <set name="brands" table="brand" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Catagory1_idCatagory1" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Brand" />
+        </set>
+        <set name="products" table="product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Catagory1_idCatagory1" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Product" />
+        </set>
+        <set name="models" table="model" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Catagory1_idCatagory1" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Model" />
+        </set>
+        <set name="catagory2s" table="catagory2" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Catagory1_idCatagory1" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Catagory2" />
+        </set>
+    </class>
+</hibernate-mapping>

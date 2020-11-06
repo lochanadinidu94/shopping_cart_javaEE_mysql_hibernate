@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Loginreport" table="loginreport" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idLoginReport" type="java.lang.Integer">
+            <column name="idLoginReport" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="Databasefile.User" fetch="select">
+            <column name="User_idUser" not-null="true" />
+        </many-to-one>
+        <property name="date" type="string">
+            <column name="Date" length="45" />
+        </property>
+        <property name="inTime" type="time">
+            <column name="InTime" length="8" />
+        </property>
+        <property name="outTime" type="time">
+            <column name="OutTime" length="8" />
+        </property>
+    </class>
+</hibernate-mapping>

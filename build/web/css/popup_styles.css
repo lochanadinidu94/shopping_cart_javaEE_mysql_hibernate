@@ -1,0 +1,27 @@
+/*WebDesignAndSuch.com*/
+
+
+
+
+
+@charset "UTF-8";
+
+
+#popUpDiv,#popUpDiv2,#popUpDiv3,#popUpDiv4,#popUpDiv5,#popUpDiv6 {
+	position:absolute;
+        left: 100px;
+        top: 150px;
+	width:400px;
+	height:350px;
+	border:1px solid #000;
+        background-color: #dff0d8;
+}
+#popUpDiv6 {
+	position:absolute;
+        left: 380px;
+        top: 100px;
+	width:600px;
+	height:450px;
+	border:1px solid #000;
+        background-color: #dff0d8;
+}

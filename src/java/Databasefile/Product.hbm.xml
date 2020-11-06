@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Product" table="product" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idProduct" type="java.lang.Integer">
+            <column name="idProduct" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="brand" class="Databasefile.Brand" fetch="select">
+            <column name="Brand_idBrand" not-null="true" />
+        </many-to-one>
+        <many-to-one name="catagory1" class="Databasefile.Catagory1" fetch="select">
+            <column name="Catagory1_idCatagory1" not-null="true" />
+        </many-to-one>
+        <many-to-one name="catagory2" class="Databasefile.Catagory2" fetch="select">
+            <column name="Catagory2_idCatagory2" not-null="true" />
+        </many-to-one>
+        <many-to-one name="model" class="Databasefile.Model" fetch="select">
+            <column name="Model_idModel" not-null="true" />
+        </many-to-one>
+        <many-to-one name="productstates" class="Databasefile.Productstates" fetch="select">
+            <column name="ProductStates_idProductStates" not-null="true" />
+        </many-to-one>
+        <many-to-one name="size" class="Databasefile.Size" fetch="select">
+            <column name="Size_idSize" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="Name" length="45" />
+        </property>
+        <property name="discription" type="string">
+            <column name="Discription" length="45" />
+        </property>
+        <property name="qty" type="java.lang.Integer">
+            <column name="Qty" />
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="Amount" precision="22" scale="0" />
+        </property>
+        <set name="fistpages" table="fistpage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_idProduct" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Fistpage" />
+        </set>
+        <set name="rattings" table="ratting" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_idProduct" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Ratting" />
+        </set>
+        <set name="discounts" table="discount" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_idProduct" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Discount" />
+        </set>
+        <set name="productimages" table="productimage" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_idProduct" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Productimage" />
+        </set>
+        <set name="wishLists" table="wish_list" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_idProduct" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.WishList" />
+        </set>
+        <set name="productHasColors" table="product_has_color" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_idProduct" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.ProductHasColor" />
+        </set>
+        <set name="invoiceinformations" table="invoiceinformation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Product_idProduct" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Invoiceinformation" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Userfeedback" table="userfeedback" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idUserFeedback" type="java.lang.Integer">
+            <column name="idUserFeedback" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="Databasefile.User" fetch="select">
+            <column name="User_idUser" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="Name" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

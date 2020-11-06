@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Distype" table="distype" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idDisType" type="java.lang.Integer">
+            <column name="idDisType" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="string">
+            <column name="Type" length="45" />
+        </property>
+        <set name="discounts" table="discount" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DisType_idDisType" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Discount" />
+        </set>
+    </class>
+</hibernate-mapping>

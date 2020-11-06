@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Model" table="model" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idModel" type="java.lang.Integer">
+            <column name="idModel" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="brand" class="Databasefile.Brand" fetch="select">
+            <column name="Brand_idBrand" not-null="true" />
+        </many-to-one>
+        <many-to-one name="catagory1" class="Databasefile.Catagory1" fetch="select">
+            <column name="Catagory1_idCatagory1" not-null="true" />
+        </many-to-one>
+        <many-to-one name="catagory2" class="Databasefile.Catagory2" fetch="select">
+            <column name="Catagory2_idCatagory2" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="Name" length="45" />
+        </property>
+        <set name="products" table="product" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Model_idModel" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Product" />
+        </set>
+    </class>
+</hibernate-mapping>

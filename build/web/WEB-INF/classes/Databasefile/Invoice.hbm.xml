@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Invoice" table="invoice" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idInvoice" type="java.lang.Integer">
+            <column name="idInvoice" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="delavary" class="Databasefile.Delavary" fetch="select">
+            <column name="Delavary_idDelavary1" not-null="true" />
+        </many-to-one>
+        <many-to-one name="donateamount" class="Databasefile.Donateamount" fetch="select">
+            <column name="DonateAmount_idDonateAmount" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="Databasefile.User" fetch="select">
+            <column name="User_idUser" not-null="true" />
+        </many-to-one>
+        <property name="date" type="string">
+            <column name="Date" length="45" />
+        </property>
+        <property name="time" type="string">
+            <column name="Time" length="45" />
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="Amount" precision="22" scale="0" />
+        </property>
+        <property name="shAmount" type="double">
+            <column name="ShAmount" precision="22" scale="0" not-null="true" />
+        </property>
+        <set name="invoiceinformations" table="invoiceinformation" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Invoice_idInvoice" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Invoiceinformation" />
+        </set>
+    </class>
+</hibernate-mapping>

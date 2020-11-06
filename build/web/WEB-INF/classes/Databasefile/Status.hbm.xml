@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Status" table="status" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idStatus" type="java.lang.Integer">
+            <column name="idStatus" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="admin" class="Databasefile.Admin" fetch="select">
+            <column name="Admin_idAdmin" not-null="true" />
+        </many-to-one>
+        <property name="status" type="string">
+            <column name="Status" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

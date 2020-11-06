@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Image" table="image" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="imageid" type="java.lang.Integer">
+            <column name="Imageid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="addreg" class="Databasefile.Addreg" fetch="select">
+            <column name="Addreg_idAddreg" not-null="true" />
+        </many-to-one>
+        <property name="im1" type="string">
+            <column name="im1" length="45" />
+        </property>
+        <property name="im2" type="string">
+            <column name="im2" length="45" />
+        </property>
+        <property name="im3" type="string">
+            <column name="im3" length="45" />
+        </property>
+        <property name="im4" type="string">
+            <column name="im4" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

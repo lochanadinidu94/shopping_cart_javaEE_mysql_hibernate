@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/finalajdesviva?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">1997</property>
+    <mapping resource="Databasefile/Sliderimage.hbm.xml"/>
+    <mapping resource="Databasefile/Productimage.hbm.xml"/>
+    <mapping resource="Databasefile/Catagory2.hbm.xml"/>
+    <mapping resource="Databasefile/Discount.hbm.xml"/>
+    <mapping resource="Databasefile/WishList.hbm.xml"/>
+    <mapping resource="Databasefile/Pages.hbm.xml"/>
+    <mapping resource="Databasefile/Fistpage.hbm.xml"/>
+    <mapping resource="Databasefile/Size.hbm.xml"/>
+    <mapping resource="Databasefile/Donateresion.hbm.xml"/>
+    <mapping resource="Databasefile/Distype.hbm.xml"/>
+    <mapping resource="Databasefile/Invoice.hbm.xml"/>
+    <mapping resource="Databasefile/Admin.hbm.xml"/>
+    <mapping resource="Databasefile/Color.hbm.xml"/>
+    <mapping resource="Databasefile/Ratting.hbm.xml"/>
+    <mapping resource="Databasefile/Brand.hbm.xml"/>
+    <mapping resource="Databasefile/Login.hbm.xml"/>
+    <mapping resource="Databasefile/Productstates.hbm.xml"/>
+    <mapping resource="Databasefile/Userrole.hbm.xml"/>
+    <mapping resource="Databasefile/ProductHasColor.hbm.xml"/>
+    <mapping resource="Databasefile/Userfeedback.hbm.xml"/>
+    <mapping resource="Databasefile/Image.hbm.xml"/>
+    <mapping resource="Databasefile/Loginreport.hbm.xml"/>
+    <mapping resource="Databasefile/Delavary.hbm.xml"/>
+    <mapping resource="Databasefile/Faq.hbm.xml"/>
+    <mapping resource="Databasefile/Gender.hbm.xml"/>
+    <mapping resource="Databasefile/Msgadmin.hbm.xml"/>
+    <mapping resource="Databasefile/Adminlogin.hbm.xml"/>
+    <mapping resource="Databasefile/Model.hbm.xml"/>
+    <mapping resource="Databasefile/Catagory1.hbm.xml"/>
+    <mapping resource="Databasefile/District.hbm.xml"/>
+    <mapping resource="Databasefile/Product.hbm.xml"/>
+    <mapping resource="Databasefile/Addinvoice.hbm.xml"/>
+    <mapping resource="Databasefile/User.hbm.xml"/>
+    <mapping resource="Databasefile/Quackanswer.hbm.xml"/>
+    <mapping resource="Databasefile/Donateamount.hbm.xml"/>
+    <mapping resource="Databasefile/Addreg.hbm.xml"/>
+    <mapping resource="Databasefile/Invoiceinformation.hbm.xml"/>
+    <mapping resource="Databasefile/Status.hbm.xml"/>
+    <mapping resource="Databasefile/Sizetype.hbm.xml"/>
+    <mapping resource="Databasefile/UserStatus.hbm.xml"/>
+    <mapping resource="Databasefile/Msg.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

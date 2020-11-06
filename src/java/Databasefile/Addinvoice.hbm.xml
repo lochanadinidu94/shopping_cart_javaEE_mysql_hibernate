@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Addinvoice" table="addinvoice" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idAddinvoice" type="java.lang.Integer">
+            <column name="idAddinvoice" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="addreg" class="Databasefile.Addreg" fetch="select">
+            <column name="Addreg_idAddreg" not-null="true" />
+        </many-to-one>
+        <property name="date" type="date">
+            <column name="Date" length="10" />
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="Amount" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

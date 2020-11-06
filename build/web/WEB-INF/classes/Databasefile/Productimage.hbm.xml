@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Productimage" table="productimage" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idProductImage" type="java.lang.Integer">
+            <column name="idProductImage" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="product" class="Databasefile.Product" fetch="select">
+            <column name="Product_idProduct" not-null="true" />
+        </many-to-one>
+        <property name="url1" type="string">
+            <column name="url1" length="45" />
+        </property>
+        <property name="url2" type="string">
+            <column name="url2" length="45" />
+        </property>
+        <property name="url3" type="string">
+            <column name="url3" length="45" />
+        </property>
+        <property name="url4" type="string">
+            <column name="url4" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Admin" table="admin" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idAdmin" type="java.lang.Integer">
+            <column name="idAdmin" />
+            <generator class="identity" />
+        </id>
+        <property name="fistName" type="string">
+            <column name="FistName" length="45" />
+        </property>
+        <property name="lastName" type="string">
+            <column name="LastName" length="45" />
+        </property>
+        <property name="nic" type="string">
+            <column name="NIC" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="45" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="Mobile" length="45" />
+        </property>
+        <set name="statuses" table="status" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Admin_idAdmin" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Status" />
+        </set>
+        <set name="adminlogins" table="adminlogin" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Admin_idAdmin" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Adminlogin" />
+        </set>
+    </class>
+</hibernate-mapping>

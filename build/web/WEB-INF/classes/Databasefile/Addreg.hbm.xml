@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 7, 2016 12:21:03 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Databasefile.Addreg" table="addreg" catalog="finalajdesviva" optimistic-lock="version">
+        <id name="idAddreg" type="java.lang.Integer">
+            <column name="idAddreg" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="Databasefile.User" fetch="select">
+            <column name="User_idUser" not-null="true" />
+        </many-to-one>
+        <property name="plan" type="string">
+            <column name="Plan" length="45" />
+        </property>
+        <property name="reason" type="string">
+            <column name="Reason" length="45" />
+        </property>
+        <property name="expdate" type="date">
+            <column name="Expdate" length="10" />
+        </property>
+        <property name="states" type="string">
+            <column name="States" length="45" />
+        </property>
+        <set name="images" table="image" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Addreg_idAddreg" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Image" />
+        </set>
+        <set name="addinvoices" table="addinvoice" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Addreg_idAddreg" not-null="true" />
+            </key>
+            <one-to-many class="Databasefile.Addinvoice" />
+        </set>
+    </class>
+</hibernate-mapping>

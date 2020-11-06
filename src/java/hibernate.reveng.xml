@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="finalajdesviva"/>
+  <table-filter match-name="admin"/>
+  <table-filter match-name="loginreport"/>
+  <table-filter match-name="catagory2"/>
+  <table-filter match-name="msgadmin"/>
+  <table-filter match-name="invoice"/>
+  <table-filter match-name="msg"/>
+  <table-filter match-name="catagory1"/>
+  <table-filter match-name="invoiceinformation"/>
+  <table-filter match-name="productstates"/>
+  <table-filter match-name="product"/>
+  <table-filter match-name="model"/>
+  <table-filter match-name="faq"/>
+  <table-filter match-name="user_status"/>
+  <table-filter match-name="addreg"/>
+  <table-filter match-name="productimage"/>
+  <table-filter match-name="userrole"/>
+  <table-filter match-name="pages"/>
+  <table-filter match-name="image"/>
+  <table-filter match-name="status"/>
+  <table-filter match-name="userfeedback"/>
+  <table-filter match-name="quackanswer"/>
+  <table-filter match-name="fistpage"/>
+  <table-filter match-name="adminlogin"/>
+  <table-filter match-name="delavary"/>
+  <table-filter match-name="distype"/>
+  <table-filter match-name="size"/>
+  <table-filter match-name="district"/>
+  <table-filter match-name="donateresion"/>
+  <table-filter match-name="userrole_has_pages"/>
+  <table-filter match-name="brand"/>
+  <table-filter match-name="login"/>
+  <table-filter match-name="sliderimage"/>
+  <table-filter match-name="donateamount"/>
+  <table-filter match-name="discount"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="gender"/>
+  <table-filter match-name="addinvoice"/>
+  <table-filter match-name="sizetype"/>
+  <table-filter match-name="ratting"/>
+  <table-filter match-name="product_has_color"/>
+  <table-filter match-name="color"/>
+  <table-filter match-name="wish_list"/>
+</hibernate-reverse-engineering>
